@@ -131,5 +131,14 @@ module.exports = {
 		},
 		defaultVariation: 'original',
 		allowExistingUsers: false
+	},
+	siteSelectorAddSitePopover: {
+		datestamp: '20161011',
+		variations: {
+			showPopover: 10,
+			hidePopover: 90
+		},
+		defaultVariation: 'hidePopover',
+		allowExistingUsers: true
 	}
 };
