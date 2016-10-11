@@ -189,16 +189,6 @@ githooks-commit:
 githooks-push:
 	@if [ ! -e .git/hooks/pre-push ]; then ln -s ../../bin/pre-push .git/hooks/pre-push; fi
 
-# generate a new shrinkwrap
-shrinkwrap: node-version
-	@! lsof -Pi :3000 -sTCP:LISTEN -t || ( echo "Please stop your Calypso instance running on port 3000 and try again." && exit 1 )
-	@type shonkwrap || ( echo "Please install shonkwrap globally and try again: 'npm install -g shonkwrap'" && exit 1 )
-	@rm -rf node_modules
-	@rm -f npm-shrinkwrap.json
-	@$(NPM) install --no-optional
-	@$(NPM) install --no-optional # remove this when this is fixed in npm 3
-	@shonkwrap --dev
-
 # rule that can be used as a prerequisite for other rules to force them to always run
 FORCE:
 
