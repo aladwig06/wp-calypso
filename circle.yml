@@ -1,6 +1,11 @@
 machine:
   node:
     version: 6.7.0
+dependencies:
+  pre:
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+  override:
+    - yarn
 test:
   pre:
     - NODE_ENV=test make client/config/index.js:
