@@ -61,7 +61,7 @@ export default function detectEmbeds( post, dom ) {
 			const match = iframe.src.match( regExp );
 			const videoId = match && ( match && match[ 2 ].length === 11 ) ? match[ 2 ] : false;
 
-			return videoId ? `https://img.youtube.com/vi/${ videoId }/0.jpg` : null;
+			return videoId ? `http://img.youtube.com/vi/${ videoId }/mqdefault.jpg` : null;
 		}
 		return null;
 	};
